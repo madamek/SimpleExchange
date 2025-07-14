@@ -23,7 +23,7 @@ docker-compose up -d
 
 ## Testing the Application
 
-1) Open the Swagger UI in your web browser: http://localhost:8080/swagger-ui.html
+1) Open the Swagger UI in your web browser: http://localhost:8080/swagger-ui/index.html
 2) Create a user using the POST /api/v1/users endpoint. Use the "Try it out" feature to send a JSON request. Remember the username and password you set.
 3) Test the secured endpoints, such as GET /api/v1/accounts/{accountId} and POST /api/v1/accounts/{accountId}/exchange, using the accountId you received after registration. Authenticate with username and password from the registration.
 
