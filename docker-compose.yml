@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    restart: on-failure
+
+  postgres-db:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    container_name: simple-exchange-postgres
+    env_file:
+      - .env
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres-data:
