@@ -92,7 +92,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(Exception e) {
-        log.error("An unexpected error occurred", e);
+        log.error("An unexpected error occurred: {}", e.getMessage());
 
         ErrorResponse errorResponse = ErrorResponse.builder()
                 .timestamp(Instant.now())
